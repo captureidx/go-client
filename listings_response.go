@@ -5,7 +5,7 @@ type Listings struct {
 }
 
 type Listing struct {
-	Type  string    `json:"type"`
-	MlNum string    `json:"ml_number"`
-	Price []float64 `json:"price"`
+	Type  string `json:"type"`
+	MlNum string `json:"ml_number"`
+	//Price []float64 `json:"price"`
 }

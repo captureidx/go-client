@@ -15,7 +15,10 @@ func TestGetListings(t *testing.T) {
 	c := Client{
 		authHeader: "Basic " + authToken,
 		//authHeader: createToken(),
-		accept:  "application/vnd.southernweb.idx.v " + version + "json",
+		//accept:  "application/vnd.southernweb.idx.v" + version + "+json", // this is from php file
+		accept:         "*/*", // this is what works on postman
+		acceptEncoding: "gzip, deflate",
+
 		timeout: defaultTimeout,
 	}
 	data, _ := c.GetListings("")
