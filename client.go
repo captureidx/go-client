@@ -61,8 +61,8 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 		return nil, err
 	}
 	//checks for status code 200
-	fmt.Println(resp.Request)    // print out req for debug
-	fmt.Println(resp.StatusCode) // print out status for debug
+	//fmt.Println(resp.Request)    // print out req for debug
+	//fmt.Println(resp.StatusCode) // print out status for debug
 	if 200 != resp.StatusCode {
 		return nil, fmt.Errorf("%s", body)
 	}
@@ -98,7 +98,7 @@ func (c *Client) GetListings(query string) (*Listings, error) {
 	// create struct to save data in, struct in separate go file
 	var data Listings
 
-	fmt.Println("Path: " + path) // making sure have correct path
+	//fmt.Println("Path: " + path) // making sure have correct path
 
 	err = json.Unmarshal(bytesReturned, &data)
 
