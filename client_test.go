@@ -35,3 +35,27 @@ func TestGetListings(t *testing.T) {
 	//fmt.Println(data.Results[0].Location.Coordinates.GeoJson.Type)
 
 }
+
+func TestClient_GetBrokers(t *testing.T) {
+	c := startUp()
+
+	var data []Brokers
+
+	data, _ = c.GetBrokers("")
+
+	fmt.Println(data[0].Name)
+}
+
+func TestClient_GetAgents(t *testing.T) {
+	c := startUp()
+
+	var data []Agents
+
+	data, _ = c.GetAgents("")
+
+	fmt.Println(data[0].Phone.Mobile)
+
+	//for i:= 0; i < len(data.Results); i++{
+	//	fmt.Println(data.Results[i].Phone.Mobile)
+	//}
+}

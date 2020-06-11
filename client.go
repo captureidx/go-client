@@ -43,6 +43,10 @@ func startUp() *Client {
 
 func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 
+	req.Header.Add("Authorization", c.authHeader)
+	req.Header.Add("Accept", c.accept)
+	req.Header.Add("Accept-Encoding", c.acceptEncoding)
+
 	client := &http.Client{}
 
 	//client.Do sends req, req made in function that calls doRequest
@@ -81,10 +85,6 @@ func (c *Client) GetListings(query string) (*Listings, error) {
 		return nil, err
 	}
 
-	req.Header.Add("Authorization", c.authHeader)
-	req.Header.Add("Accept", c.accept)
-	req.Header.Add("Accept-Encoding", c.acceptEncoding)
-
 	// pass request to doRequest function which sends the request and error check
 	bytesReturned, err := c.doRequest(req)
 
@@ -113,6 +113,62 @@ func (c *Client) GetListings(query string) (*Listings, error) {
 	return &data, nil
 }
 
+func (c *Client) GetBrokers(query string) ([]Brokers, error) {
+	path := baseURL + "/brokers/" + query
+
+	req, err := http.NewRequest("GET", path, nil)
+	if err != nil {
+		fmt.Print("Error in request")
+		return nil, err
+	}
+
+	bytesReturned, err := c.doRequest(req)
+	if err != nil {
+		fmt.Println("Error sending request: ")
+		log.Fatal(err)
+		return nil, err
+	}
+
+	var data []Brokers
+
+	err = json.Unmarshal(bytesReturned, &data)
+	if err != nil {
+		fmt.Println("Error in json Unmarshal")
+		log.Fatal(err)
+		return nil, err
+	}
+
+	return data, nil
+}
+
+func (c *Client) GetAgents(query string) ([]Agents, error) {
+	path := baseURL + "/agents/" + query
+
+	req, err := http.NewRequest("GET", path, nil)
+	if err != nil {
+		fmt.Print("Error in request")
+		return nil, err
+	}
+
+	bytesReturned, err := c.doRequest(req)
+	if err != nil {
+		fmt.Println("Error sending request: ")
+		log.Fatal(err)
+		return nil, err
+	}
+
+	var data []Agents
+
+	err = json.Unmarshal(bytesReturned, &data)
+	if err != nil {
+		fmt.Println("Error in json Unmarshal")
+		log.Fatal(err)
+		return nil, err
+	}
+
+	return data, nil
+}
+
 func (c *Client) AddListing(listing *Listings, query string) error {
 	url := baseURL + "/" + query
 	j, err := json.Marshal(listing)
@@ -126,10 +182,6 @@ func (c *Client) AddListing(listing *Listings, query string) error {
 	_, err = c.doRequest(req)
 	return err
 }
-
-//func (c *Client) GetBrokers(query string) (*[]Brokers, error){
-
-//}
 
 func createToken(key string, secret string) string {
 	unencodedToken := key + ":" + secret
