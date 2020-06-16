@@ -36,7 +36,8 @@ type Links struct {
 }
 
 type Status struct {
-	// need to look into what variable to save as
+	Current string `json:"current"`
+	Changed Date   `json:"changed"`
 }
 
 type Prices struct {
