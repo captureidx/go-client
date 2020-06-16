@@ -1,7 +1,6 @@
 package client
 
 import (
-	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -22,15 +21,19 @@ const (
 )
 
 type Client struct {
+	authToken      string
 	authHeader     string
 	accept         string
 	acceptEncoding string
 	timeout        int
 }
 
-func startUp() *Client {
-
+//createClient change name
+func newClient(key string, secret string) *Client {
+	unencodedToken := key + ":" + secret
+	auth := base64.StdEncoding.EncodeToString([]byte(unencodedToken))
 	return &Client{
+		authToken:  auth,
 		authHeader: "Basic " + authToken,
 		//authHeader: createToken(),
 		//accept:  "application/vnd.southernweb.idx.v" + version + "+json", // this is from php file
@@ -64,9 +67,6 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 		log.Fatal(err)
 		return nil, err
 	}
-	//checks for status code 200
-	//fmt.Println(resp.Request)    // print out req for debug
-	//fmt.Println(resp.StatusCode) // print out status for debug
 	if 200 != resp.StatusCode {
 		return nil, fmt.Errorf("%s", body)
 	}
@@ -98,11 +98,8 @@ func (c *Client) GetListings(query string) (*Listings, error) {
 	// create struct to save data in, struct in separate go file
 	var data Listings
 
-	//fmt.Println("Path: " + path) // making sure have correct path
-
 	err = json.Unmarshal(bytesReturned, &data)
 
-	//this error is executing, invalid character error - maybe not in JSON
 	if err != nil {
 		fmt.Println("Error in json Unmarshal")
 		log.Fatal(err)
@@ -167,23 +164,4 @@ func (c *Client) GetAgents(query string) ([]Agents, error) {
 	}
 
 	return data, nil
-}
-
-func (c *Client) AddListing(listing *Listings, query string) error {
-	url := baseURL + "/" + query
-	j, err := json.Marshal(listing)
-	if err != nil {
-		return err
-	}
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(j))
-	if err != nil {
-		return err
-	}
-	_, err = c.doRequest(req)
-	return err
-}
-
-func createToken(key string, secret string) string {
-	unencodedToken := key + ":" + secret
-	return base64.StdEncoding.EncodeToString([]byte(unencodedToken))
 }
