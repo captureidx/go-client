@@ -13,20 +13,19 @@ type Listings struct {
 	SelfLink string    `json:"self_link"`
 }
 type Listing struct {
-	Type         string          `json:"type"`
-	Status       Status          `json:"status"`
-	MlNum        string          `json:"ml_number"`
-	Price        Prices          `json:"price"`
-	Description  string          `json:"description"`
-	Location     Location        `json:"location"`
-	Building     Building        `json:"building"`
-	Surroundings Surroundings    `json:"surroundings"`
-	LastUpdated  Date            `json:"last_updated"`
-	Office       Office          `json:"office"`
-	Agents       []ListingAgents `json:"agents"`
-	Media        Media           `json:"media"`
-	Key          string          `json:"key"`
-	//AddedAt
+	Type         string       `json:"type"`
+	Status       Status       `json:"status"`
+	MlNum        string       `json:"ml_number"`
+	Price        Prices       `json:"price"`
+	Description  string       `json:"description"`
+	Location     Location     `json:"location"`
+	Building     Building     `json:"building"`
+	Surroundings Surroundings `json:"surroundings"`
+	LastUpdated  Date         `json:"last_updated"`
+	Office       Office       `json:"office"`
+	Agents       []Agents     `json:"agents"`
+	Media        Media        `json:"media"`
+	Key          string       `json:"key"`
 }
 
 type Links struct {
@@ -154,13 +153,6 @@ type Office struct {
 	Name        string `json:"name"`
 	BrokerId    string `json:"broker_id"`
 	BrokerPhone string `json:"broker_phone"`
-}
-
-// Not called agents so no duplicate with struct in agents_response file
-type ListingAgents struct {
-	Name    Name   `json:"name"`
-	Phone   Phone  `json:"phone"`
-	AgentId string `json:"agent_id"`
 }
 
 type Name struct {

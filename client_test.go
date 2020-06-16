@@ -6,7 +6,7 @@ import (
 )
 
 func TestCreateToken(t *testing.T) {
-	//token := createToken("4325a38d23f92890cfe12b5fa7ecc4d6729c9028", "cce40a5e5a9295fd6bdf06ddf34ee3b8c22d5e40")
+	// token := createToken("4325a38d23f92890cfe12b5fa7ecc4d6729c9028", "cce40a5e5a9295fd6bdf06ddf34ee3b8c22d5e40")
 	//fmt.Println(token)
 }
 
