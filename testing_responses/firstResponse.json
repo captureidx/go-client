@@ -1,0 +1,418 @@
+{
+  "total": 167,
+  "start": 0,
+  "limit": 1,
+  "query": {
+    "location.subdivision": "Buckhead"
+  },
+  "sort": null,
+  "links": {
+    "self": "http:\/\/0.0.0.0:5000\/listings?query%5Blocation.subdivision%5D=Buckhead&limit=1",
+    "prev": false,
+    "next": "http:\/\/0.0.0.0:5000\/listings?query%5Blocation.subdivision%5D=Buckhead&limit=1&start=1"
+  },
+  "results": [{
+    "type": "Residential",
+    "status": {
+      "current": "Active",
+      "changed": {
+        "$date": "2018-06-28T15:47:32Z"
+      }
+    },
+    "ml_number": "6034792",
+    "price": {
+      "amount": 21000000,
+      "original": 25000000,
+      "last_changed_on": {
+        "$date": "2019-01-28T17:34:38Z"
+      }
+    },
+    "description": "Privacy abounds in Atlanta's most spectacular gated estate, situated on 17 private & pristine park-like acres with substantial Chattahoochee River frontage. Unrivaled amenity package, including resort-style 70,000 gallon infinity-edge swimming pool, lighted tennis court, fully equipped gym, spa, theater, indoor resistance pool, wine cellar, guest house, underground ballroom with catering kitchen, formal & informal gardens, covered verandas, entire estate generator, guard house, caretakers suite & advanced security system. Two gated & secured residential entrances.",
+    "location": {
+      "city": "Atlanta",
+      "state": "GA",
+      "postal_code": "30327",
+      "county": "Fulton",
+      "subdivision": "Buckhead",
+      "street": {
+        "number": 4110,
+        "name": "Paces Ferry Road NW",
+        "full": "4110 Paces Ferry Road NW"
+      },
+      "directions": "Located on Paces Ferry Rd directly across the street from Lovett on the east side of the Chattahoochee River.",
+      "coordinates": {
+        "latitude": 33.857499,
+        "longitude": -84.453389,
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [-84.453389, 33.857499]
+        }
+      }
+    },
+    "building": {
+      "style": ["French Provincial"],
+      "construction": ["Brick 4 Sides", "Stone"],
+      "square_feet": {
+        "size": 34688,
+        "source": "Builder"
+      },
+      "stories": "Three Or More",
+      "built_in": 2007,
+      "rooms": {
+        "bed": {
+          "description": ["In-Law Suite\/Apartment", "Sitting Room"],
+          "count": 7
+        },
+        "baths": {
+          "master": ["Double Vanity", "Separate His\/Hers", "Separate Tub\/Shower", "Whirlpool Tub"],
+          "full": 9,
+          "half": 5
+        },
+        "kitchen": ["Breakfast Bar", "Cabinets Stain", "Eat-in Kitchen", "Keeping Room", "Kitchen Island", "Pantry Walk-In", "Second Kitchen", "Stone Counters", "View to Family Room"],
+        "description": ["Bonus Room", "Den", "Exercise Room", "Family Room", "Great Room - 1 Story", "Media Room", "Office", "Wine Cellar"],
+        "basement": ["Bath\/Stubbed", "Daylight", "Exterior Entry", "Finished", "Full", "Interior Entry"]
+      },
+      "pool": ["In Ground"],
+      "features": ["Beamed Ceilings", "Elevator", "Entrance Foyer 2 Story", "High Ceilings 10 ft Lower", "High Ceilings 10 ft Main", "High Ceilings 10 ft Upper", "High Speed Internet", "Permanent Attic Stairs", "Sauna", "Walk-In Closet(s)", "Wet Bar"],
+      "appliances": ["Dishwasher", "Disposal", "Double Oven", "Energy Star Appliances", "Gas Range", "Microwave", "Refrigerator", "Self Cleaning Oven", "Washer"],
+      "hvac": ["Central Air", "Zoned"],
+      "fireplaces": {
+        "count": 8,
+        "description": ["Family Room", "Keeping Room", "Living Room", "Master Bedroom"],
+        "exists": true
+      }
+    },
+    "surroundings": {
+      "water": {
+        "type": ["Streams Or River"]
+      },
+      "sewer": ["Septic Tank"],
+      "services": ["Clubhouse", "Fitness Center", "Gated", "Pool", "Restaurant", "Sidewalks", "Street Lights", "Tennis Court(s)"],
+      "utilities": ["Cable Available", "Electricity Available", "Natural Gas Available", "Underground Utilities"],
+      "parking": ["Attached", "Drive Under Main Level", "Driveway", "Garage"],
+      "features": ["Garden", "Tennis Court(s)"],
+      "land": {
+        "size": {
+          "acres": 16.99
+        },
+        "description": ["Landscaped", "Private"]
+      },
+      "school": {
+        "elementary": "Jackson - Atlanta",
+        "junior": "Sutton",
+        "high": "North Atlanta"
+      }
+    },
+    "last_updated": {
+      "$date": "2019-01-28T12:34:38Z"
+    },
+    "office": {
+      "name": "Atlanta Fine Homes Sothebys International",
+      "broker_id": "ATFH03",
+      "broker_phone": "404-874-0300"
+    },
+    "agents": [{
+      "name": {
+        "first": "CHASE",
+        "last": "MIZELL"
+      },
+      "phone": {
+        "preferred": "770-289-2780",
+        "mobile": "770-289-2780",
+        "fax": "404-835-9596"
+      },
+      "agent_id": "MIZELL"
+    }],
+    "media": {
+      "virtual_tours": ["https:\/\/www.propertypanorama.com\/instaview\/fmls\/6034792"],
+      "photos": [{
+        "position": 0,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435690.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435690\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435690\/440x.jpg"
+        }
+      }, {
+        "position": 1,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435696.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435696\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435696\/440x.jpg"
+        }
+      }, {
+        "position": 2,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435703.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435703\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435703\/440x.jpg"
+        }
+      }, {
+        "position": 3,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435707.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435707\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435707\/440x.jpg"
+        }
+      }, {
+        "position": 4,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435715.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435715\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435715\/440x.jpg"
+        }
+      }, {
+        "position": 5,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435725.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435725\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435725\/440x.jpg"
+        }
+      }, {
+        "position": 6,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435729.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435729\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435729\/440x.jpg"
+        }
+      }, {
+        "position": 7,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435730.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435730\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435730\/440x.jpg"
+        }
+      }, {
+        "position": 8,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435731.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435731\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435731\/440x.jpg"
+        }
+      }, {
+        "position": 9,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435732.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435732\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435732\/440x.jpg"
+        }
+      }, {
+        "position": 10,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435733.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435733\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435733\/440x.jpg"
+        }
+      }, {
+        "position": 11,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435734.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435734\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435734\/440x.jpg"
+        }
+      }, {
+        "position": 12,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435735.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435735\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435735\/440x.jpg"
+        }
+      }, {
+        "position": 13,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435736.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435736\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435736\/440x.jpg"
+        }
+      }, {
+        "position": 14,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435739.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435739\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435739\/440x.jpg"
+        }
+      }, {
+        "position": 15,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435740.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435740\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435740\/440x.jpg"
+        }
+      }, {
+        "position": 16,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435741.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435741\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435741\/440x.jpg"
+        }
+      }, {
+        "position": 17,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435742.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435742\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435742\/440x.jpg"
+        }
+      }, {
+        "position": 18,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435744.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435744\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435744\/440x.jpg"
+        }
+      }, {
+        "position": 19,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435745.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435745\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435745\/440x.jpg"
+        }
+      }, {
+        "position": 20,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435747.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435747\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435747\/440x.jpg"
+        }
+      }, {
+        "position": 21,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435748.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435748\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435748\/440x.jpg"
+        }
+      }, {
+        "position": 22,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435749.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435749\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435749\/440x.jpg"
+        }
+      }, {
+        "position": 23,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435750.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435750\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435750\/440x.jpg"
+        }
+      }, {
+        "position": 24,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435754.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435754\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435754\/440x.jpg"
+        }
+      }, {
+        "position": 25,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435756.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435756\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435756\/440x.jpg"
+        }
+      }, {
+        "position": 26,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435758.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435758\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435758\/440x.jpg"
+        }
+      }, {
+        "position": 27,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435761.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435761\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435761\/440x.jpg"
+        }
+      }, {
+        "position": 28,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435764.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435764\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435764\/440x.jpg"
+        }
+      }, {
+        "position": 29,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435766.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435766\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435766\/440x.jpg"
+        }
+      }, {
+        "position": 30,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435772.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435772\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435772\/440x.jpg"
+        }
+      }, {
+        "position": 31,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435776.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435776\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435776\/440x.jpg"
+        }
+      }, {
+        "position": 32,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435782.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435782\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435782\/440x.jpg"
+        }
+      }, {
+        "position": 33,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435784.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435784\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435784\/440x.jpg"
+        }
+      }, {
+        "position": 34,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435786.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435786\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435786\/440x.jpg"
+        }
+      }, {
+        "position": 35,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435787.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435787\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435787\/440x.jpg"
+        }
+      }, {
+        "position": 36,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435789.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435789\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435789\/440x.jpg"
+        }
+      }, {
+        "position": 37,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435798.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435798\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435798\/440x.jpg"
+        }
+      }, {
+        "position": 38,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435800.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435800\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435800\/440x.jpg"
+        }
+      }, {
+        "position": 39,
+        "urls": {
+          "original": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435803.jpg",
+          "215x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435803\/215x.jpg",
+          "440x": "https:\/\/new.photos.idx.io\/fmls-reso\/6034792\/53435803\/440x.jpg"
+        }
+      }]
+    },
+    "key": "fmls-6034792",
+    "added_at": {
+      "$date": "2018-06-28T11:47:32Z"
+    },
+    "source": "fmls",
+    "self_link": "http:\/\/0.0.0.0:5000\/listings\/fmls-6034792"
+  }],
+  "timestamp": 1592422389
+}

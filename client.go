@@ -11,9 +11,6 @@ import (
 )
 
 const (
-	//baseURL = "http://api.idx.io:5000/"
-	baseURL = "http://localhost:5000"
-	// for local
 	//authToken = "NDMyNWEzOGQyM2Y5Mjg5MGNmZTEyYjVmYTdlY2M0ZDY3MjljOTAyODpjY2U0MGE1ZTVhOTI5NWZkNmJkZjA2ZGRmMzRlZTNiOGMyMmQ1ZTQw"
 	// for actual api
 	//authToken      = "MzY0ZDE5MTc0MzZlNTM0ZTE5OWEyMDM5M2FmYmFkNmViMDRhZDEwODphNDczZDBjNjI5MTg0MmMwYjVjMjFiNzc1OTIxZWM3YTFlMGQ4Nzkz"
@@ -21,14 +18,22 @@ const (
 	version        = "1"
 )
 
+var baseURL = "http://localhost:5000"
+
+//var baseURL = "http://api.idx.io:80/"
+
 type Client struct {
 	authHeader     string
 	accept         string
 	acceptEncoding string
 }
 
+func SetBaseUrl(url string) {
+	baseURL = url
+}
+
 // user will pass in key and secret when instantiating the Client
-func newClient(key string, secret string) *Client {
+func NewClient(key string, secret string) *Client {
 	unencodedToken := key + ":" + secret
 	auth := base64.StdEncoding.EncodeToString([]byte(unencodedToken))
 	return &Client{
@@ -72,7 +77,10 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 
 // Look into simplifying all the Get functions into one as they are very similar
 // When passing in query strings for Get functions format as such Ex: ?query[key=value]&limit=value
-func (c *Client) GetListings(query string) (*Listings, error) {
+func (c *Client) GetListings(url string, query string) (*Listings, error) {
+	if url != "" {
+		SetBaseUrl(url)
+	}
 	//form URL for request
 	path := baseURL + "/listings/" + query
 
@@ -106,7 +114,11 @@ func (c *Client) GetListings(query string) (*Listings, error) {
 	return &data, nil
 }
 
-func (c *Client) GetBrokers(query string) ([]Brokers, error) {
+func (c *Client) GetBrokers(url string, query string) ([]Brokers, error) {
+	if url == "" {
+		SetBaseUrl("http://localhost:5000")
+	}
+
 	path := baseURL + "/brokers/" + query
 
 	req, err := http.NewRequest("GET", path, nil)

@@ -1,10 +1,10 @@
 package client
 
 type Listings struct {
-	Total    float64   `json:"total"`
-	Start    float64   `json:"start"`
-	Limit    float64   `json:"limit"`
-	Query    []string  `json:"query"`
+	Total float64 `json:"total"`
+	Start float64 `json:"start"`
+	Limit float64 `json:"limit"`
+	//Query    []string  `json:"query"`
 	Sort     bool      `json:"sort"`
 	Links    Links     `json:"links"`
 	Results  []Listing `json:"results"`
