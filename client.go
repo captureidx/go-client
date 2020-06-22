@@ -78,7 +78,9 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 // Look into simplifying all the Get functions into one as they are very similar
 // When passing in query strings for Get functions format as such Ex: ?query[key=value]&limit=value
 func (c *Client) GetListings(url string, query string) (*Listings, error) {
-	if url != "" {
+	if url == "" {
+		SetBaseUrl("http://localhost:5000")
+	} else {
 		SetBaseUrl(url)
 	}
 	//form URL for request
@@ -117,6 +119,8 @@ func (c *Client) GetListings(url string, query string) (*Listings, error) {
 func (c *Client) GetBrokers(url string, query string) ([]Brokers, error) {
 	if url == "" {
 		SetBaseUrl("http://localhost:5000")
+	} else {
+		SetBaseUrl(url)
 	}
 
 	path := baseURL + "/brokers/" + query

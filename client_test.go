@@ -1,29 +1,18 @@
 package client
 
 import (
-	"flag"
 	"fmt"
-	"log"
 	"net/http"
+	"net/http/httptest"
 	"testing"
 )
 
 var filePath string // for serving different json files
 
-//serves a json file tp allow our client to call - for testing purposes
-func util(port string) {
+//creates httptest server to send json files to
+func serverForTest() *httptest.Server {
 
-	var httpDir string
-	var httpPort string
-
-	httpDir = "./testing_responses/" + filePath
-	httpPort = port
-	flag.Parse()
-
-	log.Println("Starting responses server with root dir: ", httpDir)
-	http.HandleFunc("/", foo)
-	log.Println("Listening on: ", httpPort)
-	http.ListenAndServe(":"+httpPort, nil)
+	return httptest.NewServer(http.HandlerFunc(foo))
 }
 
 // what is passed to HandleFunc
@@ -40,14 +29,13 @@ func TestNewClient(t *testing.T) {
 }
 
 func TestGetListingsBaseCase(t *testing.T) {
-
+	ts := serverForTest()
+	defer ts.Close()
 	client := NewClient("4325a38d23f92890cfe12b5fa7ecc4d6729c9028", "cce40a5e5a9295fd6bdf06ddf34ee3b8c22d5e40")
-	// base case test
+
 	filePath = "firstResponse.json"
 
-	go util("8080")
-
-	data, _ := client.GetListings("http://localhost:8080", "")
+	data, _ := client.GetListings(ts.URL, "")
 
 	for i := 0; i < len(data.Results); i++ {
 		fmt.Print(data.Results[i].Type + " ")
@@ -55,15 +43,14 @@ func TestGetListingsBaseCase(t *testing.T) {
 		fmt.Print(" ")
 		fmt.Println(data.Results[i].MlNum)
 	}
-
 }
 
 func TestGetListingsNoLinks(t *testing.T) {
 	client := NewClient("4325a38d23f92890cfe12b5fa7ecc4d6729c9028", "cce40a5e5a9295fd6bdf06ddf34ee3b8c22d5e40")
-
+	ts := serverForTest()
+	defer ts.Close()
 	filePath = "noLinks.json"
-	go util("8080")
-	data1, _ := client.GetListings("http://localhost:8080", "")
+	data1, _ := client.GetListings(ts.URL, "")
 
 	for i := 0; i < len(data1.Results); i++ {
 		fmt.Print(data1.Results[i].Type + " ")
@@ -73,14 +60,19 @@ func TestGetListingsNoLinks(t *testing.T) {
 	}
 }
 
-func TestClient_GetBrokers(t *testing.T) {
-	//c := NewClient("4325a38d23f92890cfe12b5fa7ecc4d6729c9028", "cce40a5e5a9295fd6bdf06ddf34ee3b8c22d5e40")
+func TestClient_GetBrokersBaseCase(t *testing.T) {
+	client := NewClient("4325a38d23f92890cfe12b5fa7ecc4d6729c9028", "cce40a5e5a9295fd6bdf06ddf34ee3b8c22d5e40")
+	ts := serverForTest()
+	defer ts.Close()
+	filePath = "firstBrokers.json"
 
-	//var data []Brokers
+	data, _ := client.GetBrokers(ts.URL, "")
 
-	//data, _ = c.GetBrokers("","")
-
-	//fmt.Println(data[0].Name)
+	for i := 0; i < len(data); i++ {
+		fmt.Print(data[i].Name + " ")
+		fmt.Print(data[i].BrokerName + " ")
+		fmt.Println(data[i].BrokerId)
+	}
 }
 
 func TestClient_GetAgents(t *testing.T) {
