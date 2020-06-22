@@ -171,7 +171,6 @@ type Media struct {
 	Photos       []Photos `json:"photos"`
 }
 
-//store photo url as string?
 type Photos struct {
 	Position float64 `json:"position"`
 	Urls     Urls    `json:"urls"`

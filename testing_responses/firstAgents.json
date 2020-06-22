@@ -1,0 +1,37 @@
+[
+  {
+    "name": {
+      "first": "A ALLEN",
+      "last": "NIELSEN"
+    },
+    "phone": {
+      "preferred": "404-668-7768",
+      "mobile": "404-668-7768",
+      "fax": "678-494-0645"
+    },
+    "agent_id": "NIELSENA"
+  },
+  {
+    "name": {
+      "first": "A Fitzgerald",
+      "last": "Breland"
+    },
+    "phone": {
+      "preferred": "470-819-1053",
+      "mobile": "470-819-1053"
+    },
+    "agent_id": "FBRELAND"
+  },
+  {
+    "name": {
+      "first": "AARON",
+      "last": "ALLEN"
+    },
+    "phone": {
+      "preferred": "404-606-2219",
+      "mobile": "404-606-2219",
+      "fax": "866-298-8584"
+    },
+    "agent_id": "ALDENDEN"
+  }
+]

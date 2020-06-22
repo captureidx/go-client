@@ -11,28 +11,21 @@ import (
 )
 
 const (
-	//authToken = "NDMyNWEzOGQyM2Y5Mjg5MGNmZTEyYjVmYTdlY2M0ZDY3MjljOTAyODpjY2U0MGE1ZTVhOTI5NWZkNmJkZjA2ZGRmMzRlZTNiOGMyMmQ1ZTQw"
-	// for actual api
-	//authToken      = "MzY0ZDE5MTc0MzZlNTM0ZTE5OWEyMDM5M2FmYmFkNmViMDRhZDEwODphNDczZDBjNjI5MTg0MmMwYjVjMjFiNzc1OTIxZWM3YTFlMGQ4Nzkz"
+	// timeout for sending request
 	defaultTimeout = 30 * time.Second
-	version        = "1"
+	//version        = "1"
 )
 
-var baseURL = "http://localhost:5000"
+//var baseURL = "http://localhost:5000"
 
-//var baseURL = "http://api.idx.io:80/"
-
+// Stores the Headers for the request
 type Client struct {
 	authHeader     string
 	accept         string
 	acceptEncoding string
 }
 
-func SetBaseUrl(url string) {
-	baseURL = url
-}
-
-// user will pass in key and secret when instantiating the Client
+// User will pass in key and secret when instantiating the Client
 func NewClient(key string, secret string) *Client {
 	unencodedToken := key + ":" + secret
 	auth := base64.StdEncoding.EncodeToString([]byte(unencodedToken))
@@ -43,8 +36,9 @@ func NewClient(key string, secret string) *Client {
 	}
 }
 
+// Takes a request, adds headers to it, sends request, then checks for 200 status
 func (c *Client) doRequest(req *http.Request) ([]byte, error) {
-
+	// adds headers to request
 	req.Header.Add("Authorization", c.authHeader)
 	req.Header.Add("Accept", c.accept)
 	req.Header.Add("Accept-Encoding", c.acceptEncoding)
@@ -60,10 +54,10 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 		log.Fatal(err)
 		return nil, err
 	}
-	// defer - executed last
+
 	defer resp.Body.Close()
 
-	//ReadAll could be risky, look into other functions
+	//ReadAll could be risky depending on file size
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
@@ -75,25 +69,19 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 	return body, nil
 }
 
-// Look into simplifying all the Get functions into one as they are very similar
 // When passing in query strings for Get functions format as such Ex: ?query[key=value]&limit=value
+// Creates a request to Get Listings from API, sends to DoRequest(), receives the json from DoRequest and returns it
 func (c *Client) GetListings(url string, query string) (*Listings, error) {
-	if url == "" {
-		SetBaseUrl("http://localhost:5000")
-	} else {
-		SetBaseUrl(url)
-	}
-	//form URL for request
-	path := baseURL + "/listings/" + query
 
-	// create request and check for error
+	path := url + "/listings/" + query
+
 	req, err := http.NewRequest("GET", path, nil)
 
 	if err != nil {
 		fmt.Print("Error in request")
 		return nil, err
 	}
-	// pass request to doRequest function which sends the request and error check
+
 	bytesReturned, err := c.doRequest(req)
 
 	if err != nil {
@@ -102,7 +90,7 @@ func (c *Client) GetListings(url string, query string) (*Listings, error) {
 		log.Fatal(err)
 		return nil, err
 	}
-	// create struct to save data in, struct in separate go file
+
 	var data Listings
 
 	err = json.Unmarshal(bytesReturned, &data)
@@ -112,18 +100,14 @@ func (c *Client) GetListings(url string, query string) (*Listings, error) {
 		log.Fatal(err)
 		return nil, err
 	}
-	// return data, nil
+
 	return &data, nil
 }
 
+// Creates a request to Get Brokers from API, sends to DoRequest(), receives the json from DoRequest and returns it
+// API currently does not support queries for Brokers I believe
 func (c *Client) GetBrokers(url string, query string) ([]Brokers, error) {
-	if url == "" {
-		SetBaseUrl("http://localhost:5000")
-	} else {
-		SetBaseUrl(url)
-	}
-
-	path := baseURL + "/brokers/" + query
+	path := url + "/brokers/" + query
 
 	req, err := http.NewRequest("GET", path, nil)
 	if err != nil {
@@ -150,8 +134,11 @@ func (c *Client) GetBrokers(url string, query string) ([]Brokers, error) {
 	return data, nil
 }
 
-func (c *Client) GetAgents(query string) ([]Agents, error) {
-	path := baseURL + "/agents/" + query
+// Creates a request to Get Agents from API, sends to DoRequest(), receives the json from DoRequest and returns it
+// API currently does not support queries for Agents I believe
+func (c *Client) GetAgents(url string, query string) ([]Agents, error) {
+
+	path := url + "/agents/" + query
 
 	req, err := http.NewRequest("GET", path, nil)
 	if err != nil {
