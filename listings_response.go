@@ -30,9 +30,9 @@ type Listing struct {
 }
 
 type Links struct {
-	Self string `json:"self"`
-	Prev bool   `json:"prev"`
-	Next string `json:"next"`
+	Self string      `json:"self"`
+	Prev interface{} `json:"prev"`
+	Next interface{} `json:"next"`
 }
 
 type Status struct {
