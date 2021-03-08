@@ -60,6 +60,7 @@ type Location struct {
 type Street struct {
 	Number float64 `json:"number"`
 	Name   string  `json:"name"`
+	Unit   string  `json:"unit"`
 	Full   string  `json:"full"`
 }
 
