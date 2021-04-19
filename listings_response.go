@@ -176,7 +176,6 @@ type Media struct {
 type Photos struct {
 	Position float64 `json:"position"`
 	Urls     Urls    `json:"urls"`
-	S3Key    string  `json:"S3Key"`
 }
 
 type Urls struct {
