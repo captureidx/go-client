@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"time"
 )
@@ -58,7 +57,6 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 	//client.Do sends req, req made in function that calls doRequest
 	resp, err := client.Do(req)
 	if err != nil {
-		log.Fatal(err)
 		return nil, err
 	}
 
@@ -67,12 +65,14 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 	//ReadAll could be risky depending on file size
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
 		return nil, err
 	}
+
 	if 200 != resp.StatusCode {
+		fmt.Println("receieved status code: ", resp.StatusCode)
 		return nil, fmt.Errorf("%s", body)
 	}
+
 	return body, nil
 }
 
@@ -92,9 +92,9 @@ func (c *Client) GetListings(url string, query string) (*Listings, error) {
 	bytesReturned, err := c.doRequest(req)
 
 	if err != nil {
-		fmt.Println("Error sending request: ")
-		//fmt.Println(baseURL)
-		log.Fatal(err)
+		// fmt.Println("Error sending request: ")
+		// //fmt.Println(baseURL)
+		// log.Fatalerr)
 		return nil, err
 	}
 
@@ -104,7 +104,6 @@ func (c *Client) GetListings(url string, query string) (*Listings, error) {
 
 	if err != nil {
 		fmt.Println("Error in json Unmarshal")
-		log.Fatal(err)
 		return nil, err
 	}
 
@@ -125,7 +124,6 @@ func (c *Client) GetBrokers(url string, query string) ([]Brokers, error) {
 	bytesReturned, err := c.doRequest(req)
 	if err != nil {
 		fmt.Println("Error sending request: ")
-		log.Fatal(err)
 		return nil, err
 	}
 
@@ -134,7 +132,6 @@ func (c *Client) GetBrokers(url string, query string) ([]Brokers, error) {
 	err = json.Unmarshal(bytesReturned, &data)
 	if err != nil {
 		fmt.Println("Error in json Unmarshal")
-		log.Fatal(err)
 		return nil, err
 	}
 
@@ -156,7 +153,6 @@ func (c *Client) GetAgents(url string, query string) ([]Agents, error) {
 	bytesReturned, err := c.doRequest(req)
 	if err != nil {
 		fmt.Println("Error sending request: ")
-		log.Fatal(err)
 		return nil, err
 	}
 
@@ -165,7 +161,6 @@ func (c *Client) GetAgents(url string, query string) ([]Agents, error) {
 	err = json.Unmarshal(bytesReturned, &data)
 	if err != nil {
 		fmt.Println("Error in json Unmarshal")
-		log.Fatal(err)
 		return nil, err
 	}
 
