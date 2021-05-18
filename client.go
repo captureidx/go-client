@@ -23,6 +23,7 @@ type Client struct {
 	authHeader     string
 	accept         string
 	acceptEncoding string
+	Timeout        time.Duration
 }
 
 // User will pass in key and secret when instantiating the Client
@@ -33,6 +34,7 @@ func NewClient(key string, secret string) *Client {
 		authHeader:     "Basic " + auth,
 		accept:         "*/*",
 		acceptEncoding: "gzip, deflate",
+		Timeout:        0, // explicit default
 	}
 }
 
@@ -43,9 +45,14 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 	req.Header.Add("Accept", c.accept)
 	req.Header.Add("Accept-Encoding", c.acceptEncoding)
 
+	clientTimeout := defaultTimeout
+	if c.Timeout != 0 {
+		clientTimeout = c.Timeout
+	}
+
 	//adds 30 second timeout
 	client := &http.Client{
-		Timeout: defaultTimeout,
+		Timeout: clientTimeout,
 	}
 
 	//client.Do sends req, req made in function that calls doRequest
