@@ -59,9 +59,9 @@ type Location struct {
 
 type Street struct {
 	Number string `json:"number"`
-	Name   string  `json:"name"`
-	Unit   string  `json:"unit"`
-	Full   string  `json:"full"`
+	Name   string `json:"name"`
+	Unit   string `json:"unit"`
+	Full   string `json:"full"`
 }
 
 type Coordinates struct {
@@ -70,7 +70,7 @@ type Coordinates struct {
 	GeoJson   gj      `json:"geo_json"`
 }
 
-//Geo Json
+// Geo Json
 type gj struct {
 	Type        string    `json:"type"`
 	Coordinates []float64 `json:"coordinates"`
@@ -80,7 +80,7 @@ type Building struct {
 	Style        []string   `json:"style"`
 	Construction []string   `json:"construction"`
 	SquareFeet   sf         `json:"square_feet"`
-	Stories      string     `json:"stories"`
+	Stories      []string   `json:"stories"`
 	BuiltIn      float64    `json:"built_in"`
 	Rooms        Rooms      `json:"rooms"`
 	Pool         []string   `json:"pool"`
@@ -90,7 +90,7 @@ type Building struct {
 	Fireplaces   Fireplaces `json:"fireplaces"`
 }
 
-//Square Feet
+// Square Feet
 type sf struct {
 	Size   float64 `json:"size"`
 	Source string  `json:"source"`
