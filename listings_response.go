@@ -13,20 +13,20 @@ type Listings struct {
 	SelfLink string    `json:"self_link"`
 }
 type Listing struct {
-	Type         string            `json:"type"`
-	Status       Status            `json:"status"`
-	MlNum        string            `json:"ml_number"`
-	Price        Prices            `json:"price"`
-	Description  string            `json:"description"`
-	Location     Location          `json:"location"`
-	Building     Building          `json:"building"`
-	Surroundings Surroundings      `json:"surroundings"`
-	LastUpdated  Date              `json:"last_updated"`
-	Office       Office            `json:"office"`
-	Agents       []Agents          `json:"agents"`
-	Media        Media             `json:"media"`
-	Key          string            `json:"key"`
-	Src          map[string]string `json:"src"`
+	Type         string                 `json:"type"`
+	Status       Status                 `json:"status"`
+	MlNum        string                 `json:"ml_number"`
+	Price        Prices                 `json:"price"`
+	Description  string                 `json:"description"`
+	Location     Location               `json:"location"`
+	Building     Building               `json:"building"`
+	Surroundings Surroundings           `json:"surroundings"`
+	LastUpdated  Date                   `json:"last_updated"`
+	Office       Office                 `json:"office"`
+	Agents       []Agents               `json:"agents"`
+	Media        Media                  `json:"media"`
+	Key          string                 `json:"key"`
+	Src          map[string]interface{} `json:"src"`
 }
 
 type Links struct {
